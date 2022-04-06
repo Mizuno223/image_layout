@@ -1,6 +1,7 @@
 var elements = document.getElementsByClassName("js-photo-gallery");
 var shape;
 var i;
+var SmartPhoto = require("smartphoto")
 
 new SmartPhoto(".js-smartPhoto");
 /*

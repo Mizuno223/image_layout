@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>photo layout sample</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <!--
+      <script src="./src/index.js"></script>
+    -->
+  </head>
+
+  <body>
+    <h1>photo layout sample</h1>
+    <p>
+      水野　雄斗 /
+      <a href="https://twitter.com/@@@@@@"
+        ><i class="fab fa-twitter"></i> @@@@@@</a
+      >
+      /
+      <a href="https://github.com/@@@@@@"
+        ><i class="fab fa-github"></i> @@@@@@</a
+      >
+      / yyyy/mm/dd - dd
+    </p>
+
+    <h2>2枚の時(横)</h2>
+    <ul class="js-photo-gallery layout-2-horizontal">
+      <li><img src="https://nala-golden.com/photo/p01.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p02.jpg" /></li>
+    </ul>
+
+    
+    <ul class="js-photo-gallery layout-2-horizontal">
+      <a href="https://nala-golden.com/photo/p01.jpg" class="js-smartPhoto">
+        <li><img src="https://nala-golden.com/photo/p01.jpg" /></li>
+      </a>
+      <a href="https://nala-golden.com/photo/p02.jpg" class="js-smartPhoto">
+        <li><img src="https://nala-golden.com/photo/p02.jpg" /></li>
+      </a>
+    </ul>
+
+    <h2>2枚の時(縦)</h2>
+    <ul class="js-photo-gallery layout-2-vartical">
+      <li><img src="https://nala-golden.com/photo/p11.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p12.jpg" /></li>
+    </ul>
+
+    <h2>3枚の時(横)</h2>
+    <ul class="js-photo-gallery layout-3-horizontal">
+      <li>
+        <img src="https://nala-golden.com/photo/p01.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p02.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p03.jpg" />
+      </li>
+    </ul>
+
+    <h2>3枚の時(縦)</h2>
+    <ul class="js-photo-gallery layout-3-vartical">
+      <li>
+        <img src="https://nala-golden.com/photo/p11.jpg" />
+      </li>
+      <li class="layout-3-vartical-others">
+        <img src="https://nala-golden.com/photo/p12.jpg" />
+      </li>
+      <li class="layout-3-vartical-others">
+        <img src="https://nala-golden.com/photo/p13.jpg" />
+      </li>
+    </ul>
+
+    <h2>4枚の時(横)</h2>
+    <ul class="js-photo-gallery layout-4-horizontal">
+      <li>
+        <img src="https://nala-golden.com/photo/p01.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p02.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p03.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p04.jpg" />
+      </li>
+    </ul>
+
+    <h2>4枚の時(縦)</h2>
+    <ul class="js-photo-gallery layout-4-vartical">
+      <li>
+        <img src="https://nala-golden.com/photo/p11.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p12.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p13.jpg" />
+      </li>
+      <li>
+        <img src="https://nala-golden.com/photo/p14.jpg" />
+      </li>
+    </ul>
+
+    <h2>4枚の時(正方形)</h2>
+    <ul class="js-photo-gallery layout-4-square">
+      <li><img src="https://nala-golden.com/photo/p21.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p22.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p23.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p24.jpg" /></li>
+    </ul>
+
+    <h2>5枚の時(横)</h2>
+    <ul class="js-photo-gallery layout-5-horizontal">
+      <li><img src="https://nala-golden.com/photo/p01.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p02.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p03.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p04.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p05.jpg" /></li>
+    </ul>
+
+    <h2>5枚の時(縦)</h2>
+    <ul class="js-photo-gallery layout-5-vartical">
+      <li><img src="https://nala-golden.com/photo/p11.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p12.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p13.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p14.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p15.jpg" /></li>
+    </ul>
+
+    <h2>6枚の時</h2>
+    <ul class="js-photo-gallery layout-more-horizontal">
+      <li><img src="https://nala-golden.com/photo/p01.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p02.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p03.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p04.jpg" /></li>
+      <li class="position">
+        <img src="https://nala-golden.com/photo/p05.jpg" />
+        <div class="overlay">
+          <p class="more" id="text">+2</p>
+        </div>
+      </li>
+      <li class="hide"><img src="https://nala-golden.com/photo/p06.jpg" /></li>
+    </ul>
+    <!--
+      photo01.jpg : 横長
+      photo11.jpg : 縦長
+      photo21.jpg : 正方形
+    -->
+    <!--
+      <h2>7枚の時</h2>
+    <ul class="js-photo-gallery">
+      <li><img src="https://nala-golden.com/photo/p01.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p02.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p03.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p04.jpg" /></li>
+      <li class="over">
+        <img src="https://nala-golden.com/photo/p05.jpg" />
+        <div class="overlay"><p class="hide"></p></div>
+      </li>
+      <li><img src="https://nala-golden.com/photo/p06.jpg" /></li>
+      <li><img src="https://nala-golden.com/photo/p06.jpg" /></li>
+    </ul>
+    -->
+  </body>
+</html>

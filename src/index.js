@@ -1,20 +1,24 @@
 const elements = document.getElementsByClassName("js-photo-gallery");
 
-function marginSize(size) {
+function setMarginSizeOfCSSVariable(size) {
   const $ = (el) => document.querySelector(el);
   $(":root").style.setProperty("--margin-size", size);
 }
-marginSize("2px");
+setMarginSizeOfCSSVariable("2px");
 
 elementsArray = Array.from(elements);
+
 elementsArray.forEach((elem) => {
   var count = elem.childElementCount;
+
+  // NOTE: if文がデカくて読みにくい。中の処理をわかりやすい名前にした関数に分けるといいかも
   if (count >= 6) {
     var li = elem.getElementsByTagName("li");
     li[4].classList.add("position");
 
     var newElement = document.createElement("div"); // div要素作成
     newElement.classList.add("overlay");
+
     //親要素の参照
     var parentLi = li[4];
     // 追加
@@ -28,7 +32,6 @@ elementsArray.forEach((elem) => {
     var parentDiv = elem.getElementsByClassName("overlay");
     parentDiv[0].appendChild(textElement);
 
-    var i;
     for (i = 5; i < li.length; i++) {
       li[i].classList.add("hide");
     }

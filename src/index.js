@@ -1,15 +1,7 @@
 var elements = document.getElementsByClassName("js-photo-gallery");
 var shape;
 var i;
-var SmartPhoto = require("smartphoto")
 
-new SmartPhoto(".js-smartPhoto");
-/*
-const $ = (el) => document.querySelector(el);
-$("#slider").addEventListener("input", (e) => {
-  $(":root").style.setProperty("--margin-size", `${e.target.value}px`);
-});
-*/
 function marginSize(size) {
   const $ = (el) => document.querySelector(el);
   $(":root").style.setProperty("--margin-size", size);

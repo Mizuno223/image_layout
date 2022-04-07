@@ -16,13 +16,11 @@
       rel="stylesheet"
       href="https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css"
     />
-    <script src="./src/index.js"></script>
-    <script src="https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"></script>
   </head>
 
   <body>
     <h1>photo layout sample</h1>
-    
+
     <p>
       水野　雄斗 /
       <a href="https://twitter.com/@@@@@@"
@@ -290,5 +288,12 @@
       photo11.jpg : 縦長
       photo21.jpg : 正方形
     -->
+    <script src="./src/index.js"></script>
+    <script src="https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new SmartPhoto(".js-smartPhoto");
+      });
+    </script>
   </body>
 </html>

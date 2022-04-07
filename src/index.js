@@ -1,6 +1,4 @@
-var elements = document.getElementsByClassName("js-photo-gallery");
-var shape;
-var i;
+const elements = document.getElementsByClassName("js-photo-gallery");
 
 function marginSize(size) {
   const $ = (el) => document.querySelector(el);
@@ -8,8 +6,8 @@ function marginSize(size) {
 }
 marginSize("2px");
 
-elements = Array.from(elements);
-elements.forEach((elem) => {
+elementsArray = Array.from(elements);
+elementsArray.forEach((elem) => {
   var count = elem.childElementCount;
   if (count >= 6) {
     var li = elem.getElementsByTagName("li");
@@ -30,6 +28,7 @@ elements.forEach((elem) => {
     var parentDiv = elem.getElementsByClassName("overlay");
     parentDiv[0].appendChild(textElement);
 
+    var i;
     for (i = 5; i < li.length; i++) {
       li[i].classList.add("hide");
     }
@@ -37,6 +36,7 @@ elements.forEach((elem) => {
     count = "more";
   }
 
+  var shape;
   const imgs = elem.getElementsByTagName("img");
   if (imgs[0].width > imgs[0].height) {
     shape = "horizontal";

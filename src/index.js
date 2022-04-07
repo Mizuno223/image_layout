@@ -1,9 +1,13 @@
 var elements = document.getElementsByClassName("js-photo-gallery");
 var shape;
 var i;
-var SmartPhoto = require("smartphoto")
+//const SmartPhoto = require('smartphoto');
+// NOTE: いらない
+document.addEventListener('DOMContentLoaded',function(){
+    new SmartPhoto(".js-smartphoto");
+});
 
-new SmartPhoto(".js-smartPhoto");
+//new SmartPhoto(".js-smartPhoto");
 /*
 const $ = (el) => document.querySelector(el);
 $("#slider").addEventListener("input", (e) => {
@@ -17,6 +21,7 @@ function marginSize(size) {
 marginSize("2px");
 
 elements = Array.from(elements);
+// NOTE: index とれる
 elements.forEach((elem) => {
   var count = elem.childElementCount;
   if (count >= 6) {

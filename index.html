@@ -16,8 +16,8 @@
       rel="stylesheet"
       href="https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css"
     />
-    <script src="./src/index.js"></script>
-    <script src="https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"></script>
+    <script src="./src/index.js" defer></script>
+
   </head>
 
   <body>
@@ -290,5 +290,12 @@
       photo11.jpg : 縦長
       photo21.jpg : 正方形
     -->
+
+    <script src="https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            new SmartPhoto(".js-smartPhoto");
+        });
+    </script>
   </body>
 </html>

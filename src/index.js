@@ -1,30 +1,24 @@
-var elements = document.getElementsByClassName("js-photo-gallery");
-var shape;
-var i;
-var SmartPhoto = require("smartphoto")
+const elements = document.getElementsByClassName("js-photo-gallery");
 
-new SmartPhoto(".js-smartPhoto");
-/*
-const $ = (el) => document.querySelector(el);
-$("#slider").addEventListener("input", (e) => {
-  $(":root").style.setProperty("--margin-size", `${e.target.value}px`);
-});
-*/
-function marginSize(size) {
+function setMarginSizeOfCSSVariable(size) {
   const $ = (el) => document.querySelector(el);
   $(":root").style.setProperty("--margin-size", size);
 }
-marginSize("2px");
+setMarginSizeOfCSSVariable("2px");
 
-elements = Array.from(elements);
-elements.forEach((elem) => {
+elementsArray = Array.from(elements);
+
+elementsArray.forEach((elem) => {
   var count = elem.childElementCount;
+
+  // NOTE: if文がデカくて読みにくい。中の処理をわかりやすい名前にした関数に分けるといいかも
   if (count >= 6) {
     var li = elem.getElementsByTagName("li");
     li[4].classList.add("position");
 
     var newElement = document.createElement("div"); // div要素作成
     newElement.classList.add("overlay");
+
     //親要素の参照
     var parentLi = li[4];
     // 追加
@@ -45,6 +39,7 @@ elements.forEach((elem) => {
     count = "more";
   }
 
+  var shape;
   const imgs = elem.getElementsByTagName("img");
   if (imgs[0].width > imgs[0].height) {
     shape = "horizontal";

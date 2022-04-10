@@ -4,22 +4,15 @@ document.addEventListener('DOMContentLoaded',function(){
 
 const elements = document.getElementsByClassName("js-photo-gallery");
 const elementsArray = Array.from(elements);
-// NOTE: index とれる
 elementsArray.forEach((elem) => {
   var numberOfImages = elem.childElementCount;
 
   if (numberOfImages >= 6) {
     var li = elem.getElementsByTagName("li");
-    setOverlayPosition (elem, li);
-    displayOverflowNumbers (elem, li);
+    setOverlayPosition(li);
+    displayOverflowNumbers(elem, li);
+    setHideClass(li);
     numberOfImages = "more";
-
-    liArray = Array.from(li);
-    liArray.forEach((v, i) => {
-        if (i >= 5) {
-            v.classList.add("hide");
-        }
-    });
   }
 
   var shape = getElementByImgTag(elem);
@@ -27,7 +20,7 @@ elementsArray.forEach((elem) => {
   console.log(elem);
 });
 
-function displayOverflowNumbers (elem, li) {
+function displayOverflowNumbers(elem, li) {
     var numberTextElement = document.createElement("p");
     var numberContent = document.createTextNode("+" + (li.length - 4));
     numberTextElement.appendChild(numberContent);
@@ -37,7 +30,7 @@ function displayOverflowNumbers (elem, li) {
     parentDiv[0].appendChild(numberTextElement);
 }
 
-function setOverlayPosition (elem, li) {
+function setOverlayPosition(li) {
     li[4].classList.add("position");
     var newElement = document.createElement("div");
     newElement.classList.add("overlay");
@@ -45,7 +38,7 @@ function setOverlayPosition (elem, li) {
     parentLi.insertBefore(newElement, parentLi.firstChild);
 }
 
-function getElementByImgTag (elem) {
+function getElementByImgTag(elem) {
     const imgs = elem.getElementsByTagName("img");
     if (imgs[0].width > imgs[0].height) {
       return shape = "horizontal";
@@ -54,6 +47,15 @@ function getElementByImgTag (elem) {
     } else {
       return shape = "square";
     }
+}
+
+function setHideClass(li) {
+    liArray = Array.from(li);
+    liArray.forEach((v, i) => {
+        if (i >= 5) {
+            v.classList.add("hide");
+        }
+    });
 }
 
 function marginSize(size) {

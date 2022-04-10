@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded',function(){
-    new SmartPhoto(".js-smartphoto");
-});
-
 const elements = document.getElementsByClassName("js-photo-gallery");
 const elementsArray = Array.from(elements);
 elementsArray.forEach((elem) => {
@@ -15,9 +11,8 @@ elementsArray.forEach((elem) => {
     numberOfImages = "more";
   }
 
-  var shape = getElementByImgTag(elem);
+  var shape = getImageShape(elem);
   elem.classList.add(`layout-${numberOfImages}-${shape}`);
-  console.log(elem);
 });
 
 function displayOverflowNumbers(elem, li) {
@@ -38,7 +33,7 @@ function setOverlayPosition(li) {
     parentLi.insertBefore(newElement, parentLi.firstChild);
 }
 
-function getElementByImgTag(elem) {
+function getImageShape(elem) {
     const imgs = elem.getElementsByTagName("img");
     if (imgs[0].width > imgs[0].height) {
       return shape = "horizontal";

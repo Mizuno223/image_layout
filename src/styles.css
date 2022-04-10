@@ -16,15 +16,7 @@ ul.js-photo-gallery {
     max-width: 100%;
     aspect-ratio: 1/1;
 }
-/*
-@media screen and (max-width: 480px) {
-    ul.js-photo-gallery {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-    }
-}
-  */
+
 ul.js-photo-gallery li {
     margin: var(--margin-size);
     list-style: none;
@@ -35,11 +27,7 @@ ul.js-photo-gallery img {
     height: 100%;
     object-fit: cover;
 }
-/*
-a.js-smartPhoto {
-    display: flex;
-}
-*/
+
 a.js-smartPhoto > li {
     width: 100%;
     object-fit: cover;
@@ -190,16 +178,3 @@ a.js-smartPhoto > li {
 .hide {
     display: none;
 }
-/*
-.child {
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-  
-.parent {
-    position: relative;
-}
-*/

@@ -1,19 +1,22 @@
-const elements = document.getElementsByClassName("js-photo-gallery");
-const elementsArray = Array.from(elements);
-elementsArray.forEach((elem) => {
-  var numberOfImages = elem.childElementCount;
+function run () {
+  const elements = document.getElementsByClassName("js-photo-gallery");
+  const elementsArray = Array.from(elements);
+  elementsArray.forEach((elem) => {
+    var shape = getImageShape(elem);
+    var numberOfImages = elem.childElementCount;
 
-  if (numberOfImages >= 6) {
-    var li = elem.getElementsByTagName("li");
-    setOverlayPosition(li);
-    displayOverflowNumbers(elem, li);
-    setHideClass(li);
-    numberOfImages = "more";
-  }
+    if (numberOfImages >= 6) {
+      var li = elem.getElementsByTagName("li");
+      setOverlayPosition(li);
+      displayOverflowNumbers(elem, li);
+      setHideClass(li);
+      numberOfImages = "more";
+    }
 
-  var shape = getImageShape(elem);
-  elem.classList.add(`layout-${numberOfImages}-${shape}`);
-});
+    elem.classList.add(`layout-${numberOfImages}-${shape}`);
+    marginSize("2px");
+  });
+}
 
 function displayOverflowNumbers(elem, li) {
     var numberTextElement = document.createElement("p");
@@ -57,4 +60,5 @@ function marginSize(size) {
     const $ = (el) => document.querySelector(el);
     $(":root").style.setProperty("--margin-size", size);
 }
-marginSize("2px");
+
+run();

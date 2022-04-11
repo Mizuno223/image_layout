@@ -14,7 +14,7 @@ function run () {
     }
 
     elem.classList.add(`layout-${numberOfImages}-${shape}`);
-    marginSize("2px");
+    gridGapSize("5px");
   });
 }
 
@@ -56,9 +56,9 @@ function setHideClass(li) {
     });
 }
 
-function marginSize(size) {
+function gridGapSize(size) {
     const $ = (el) => document.querySelector(el);
-    $(":root").style.setProperty("--margin-size", size);
+    $(":root").style.setProperty("--gridgap-size", size);
 }
 
 run();

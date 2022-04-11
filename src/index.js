@@ -1,64 +1,60 @@
-var elements = document.getElementsByClassName("js-photo-gallery");
-var shape;
-var i;
-//const SmartPhoto = require('smartphoto');
-// NOTE: いらない
-document.addEventListener('DOMContentLoaded',function(){
-    new SmartPhoto(".js-smartphoto");
-});
+const elements = document.getElementsByClassName("js-photo-gallery");
+const elementsArray = Array.from(elements);
+elementsArray.forEach((elem) => {
+  var numberOfImages = elem.childElementCount;
 
-//new SmartPhoto(".js-smartPhoto");
-/*
-const $ = (el) => document.querySelector(el);
-$("#slider").addEventListener("input", (e) => {
-  $(":root").style.setProperty("--margin-size", `${e.target.value}px`);
-});
-*/
-function marginSize(size) {
-  const $ = (el) => document.querySelector(el);
-  $(":root").style.setProperty("--margin-size", size);
-}
-marginSize("2px");
-
-elements = Array.from(elements);
-// NOTE: index とれる
-elements.forEach((elem) => {
-  var count = elem.childElementCount;
-  if (count >= 6) {
+  if (numberOfImages >= 6) {
     var li = elem.getElementsByTagName("li");
-    li[4].classList.add("position");
+    setOverlayPosition(li);
+    displayOverflowNumbers(elem, li);
+    setHideClass(li);
+    numberOfImages = "more";
+  }
 
-    var newElement = document.createElement("div"); // div要素作成
-    newElement.classList.add("overlay");
-    //親要素の参照
-    var parentLi = li[4];
-    // 追加
-    parentLi.insertBefore(newElement, parentLi.firstChild);
+  var shape = getImageShape(elem);
+  elem.classList.add(`layout-${numberOfImages}-${shape}`);
+});
 
-    var textElement = document.createElement("p"); // p要素作成
-    var newContent = document.createTextNode("+" + (li.length - 4)); // テキストノードを作成
-    textElement.appendChild(newContent); // p要素にテキストノードを追加
-    textElement.classList.add("more");
+function displayOverflowNumbers(elem, li) {
+    var numberTextElement = document.createElement("p");
+    var numberContent = document.createTextNode("+" + (li.length - 4));
+    numberTextElement.appendChild(numberContent);
+    numberTextElement.classList.add("more");
 
     var parentDiv = elem.getElementsByClassName("overlay");
-    parentDiv[0].appendChild(textElement);
+    parentDiv[0].appendChild(numberTextElement);
+}
 
-    for (i = 5; i < li.length; i++) {
-      li[i].classList.add("hide");
+function setOverlayPosition(li) {
+    li[4].classList.add("position");
+    var newElement = document.createElement("div");
+    newElement.classList.add("overlay");
+    var parentLi = li[4];
+    parentLi.insertBefore(newElement, parentLi.firstChild);
+}
+
+function getImageShape(elem) {
+    const imgs = elem.getElementsByTagName("img");
+    if (imgs[0].width > imgs[0].height) {
+      return shape = "horizontal";
+    } else if (imgs[0].width < imgs[0].height) {
+      return shape = "vertical";
+    } else {
+      return shape = "square";
     }
+}
 
-    count = "more";
-  }
+function setHideClass(li) {
+    liArray = Array.from(li);
+    liArray.forEach((v, i) => {
+        if (i >= 5) {
+            v.classList.add("hide");
+        }
+    });
+}
 
-  const imgs = elem.getElementsByTagName("img");
-  if (imgs[0].width > imgs[0].height) {
-    shape = "horizontal";
-  } else if (imgs[0].width < imgs[0].height) {
-    shape = "vertical";
-  } else {
-    shape = "square";
-  }
-
-  elem.classList.add(`layout-${count}-${shape}`);
-  //console.log(elem);
-});
+function marginSize(size) {
+    const $ = (el) => document.querySelector(el);
+    $(":root").style.setProperty("--margin-size", size);
+}
+marginSize("2px");

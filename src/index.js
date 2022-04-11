@@ -2,11 +2,11 @@ function run () {
   const elements = document.getElementsByClassName("js-photo-gallery");
   const elementsArray = Array.from(elements);
   elementsArray.forEach((elem) => {
-    var shape = getImageShape(elem);
+    const shape = getImageShape(elem);
     var numberOfImages = elem.childElementCount;
 
     if (numberOfImages >= 6) {
-      var li = elem.getElementsByTagName("li");
+      const li = elem.getElementsByTagName("li");
       setOverlayPosition(li);
       displayOverflowNumbers(elem, li);
       setHideClass(li);
@@ -19,20 +19,20 @@ function run () {
 }
 
 function displayOverflowNumbers(elem, li) {
-    var numberTextElement = document.createElement("p");
-    var numberContent = document.createTextNode("+" + (li.length - 4));
+    const numberTextElement = document.createElement("p");
+    const numberContent = document.createTextNode("+" + (li.length - 4));
     numberTextElement.appendChild(numberContent);
     numberTextElement.classList.add("more");
 
-    var parentDiv = elem.getElementsByClassName("overlay");
+    const parentDiv = elem.getElementsByClassName("overlay");
     parentDiv[0].appendChild(numberTextElement);
 }
 
 function setOverlayPosition(li) {
     li[4].classList.add("position");
-    var newElement = document.createElement("div");
+    const newElement = document.createElement("div");
     newElement.classList.add("overlay");
-    var parentLi = li[4];
+    const parentLi = li[4];
     parentLi.insertBefore(newElement, parentLi.firstChild);
 }
 

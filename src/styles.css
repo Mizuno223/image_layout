@@ -8,6 +8,10 @@ h2 {
     padding: 10px;
 }
   
+.account {
+    padding-left: 10px;
+}
+
 ul.js-photo-gallery {
     margin-left: 0;
     padding-left: 0;

@@ -15,13 +15,8 @@ h2 {
 ul.js-photo-gallery {
     margin-left: 0;
     padding-left: 0;
-    width: 640px;
-    height: auto;
-    max-width: 100%;
-    aspect-ratio: 1/1;
-}
-
-ul.js-photo-gallery {
+    width: 500px;
+    height: 500px;
     grid-gap: var(--gridgap-size);
     list-style: none;
 }
@@ -40,7 +35,7 @@ ul.js-photo-gallery img {
 
 .layout-2-vertical {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
 }
 
 

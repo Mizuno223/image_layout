@@ -35,13 +35,13 @@ ul.js-photo-gallery img {
 
 .layout-2-vertical {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
 }
 
 
 .layout-3-horizontal {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 60% 40%;
 }
 .layout-3-horizontal li:first-child {
@@ -52,7 +52,7 @@ ul.js-photo-gallery img {
 
 .layout-3-vertical {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
 }
 .layout-3-vertical li:first-child {
@@ -63,7 +63,7 @@ ul.js-photo-gallery img {
 
 .layout-4-horizontal {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 33% 34% 33%;
     grid-template-rows: 66% 34%;
 }
 .layout-4-horizontal li:first-child {

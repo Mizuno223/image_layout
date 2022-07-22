@@ -110,7 +110,7 @@ ul.js-photo-gallery img {
 
 .layout-5-vertical {
     display: grid;
-    grid-template-columns: 33% 17% 17% 33%;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
     grid-template-rows: 66% 34%;
 }
 .layout-5-vertical li:first-child {
